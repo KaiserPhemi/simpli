@@ -1,14 +1,24 @@
 <template>
-  <div id="app">{{myName}}</div>
+  <div id="app">
+    <Todos v-bind:todos="todos" />
+  </div>
 </template>
 
 <script>
+import Todos from "./components/Todos";
 export default {
   name: "App",
-  components: {},
+  components: {
+    Todos
+  },
   data() {
     return {
-      myName: "Kaiser Phemi"
+      todos: [
+        { id: 1, title: "Just a task", completed: false },
+        { id: 2, title: "complete Vue JS", completed: true },
+        { id: 3, title: "Host my app", completed: false },
+        { id: 4, title: "Open a mail account", completed: true }
+      ]
     };
   }
 };
